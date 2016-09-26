@@ -1,0 +1,100 @@
+<style>
+	.demo-md-panel {
+		min-height: 500px;
+	}
+
+	.demo-dialog-example {
+		background: white;
+		border-radius: 4px;
+		box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+		0 13px 19px 2px rgba(0, 0, 0, 0.14),
+		0 5px 24px 4px rgba(0, 0, 0, 0.12);
+		width: 500px;
+	}
+
+	.demo-dialog-content {
+		padding: 0 15px;
+		width: 100%;
+	}
+
+	.demo-dialog-content img {
+		height: 300px;
+		margin: auto;
+	}
+
+	.demo-dialog-button {
+		width: 100%;
+	}
+
+	.demo-menu-example {
+		background: white;
+		border-radius: 4px;
+		box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+		0 13px 19px 2px rgba(0, 0, 0, 0.14),
+		0 5px 24px 4px rgba(0, 0, 0, 0.12);
+		width: 256px;
+	}
+
+	.demo-menu-item {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		height: 48px;
+		padding: 0 16px;
+		position: relative;
+		transition: background 0.15s linear;
+		width: auto;
+	}
+
+	.demo-menu-item:hover,
+	.demo-menu-item:focus {
+		background-color: rgb(238, 238, 238);
+	}
+
+	.demo-menu-item.selected {
+		color: rgb(16, 108, 200);
+	}
+
+</style>
+<form name="assignForm">
+<div role="dialog" aria-label="Eat me!" layout="column" layout-align="center center">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Assign Participation</h2>
+			</div>
+		</md-toolbar>
+
+		<div class="demo-dialog-content">
+			<p>
+				Enter the employee name to assign participation
+			</p>
+
+			<div layout="row" >
+				<md-autocomplete flex
+						md-autofocus
+						ng-disabled="false"
+						md-no-cache="true"
+						md-selected-item="ctrl.selectedItem"
+						md-search-text-change="ctrl.searchTextChange(searchText)"
+						md-search-text="searchText"
+						md-selected-item-change="ctrl.selectedItemChange(item)"
+						md-items="item in ctrl.querySearch(searchText)"
+						md-item-text="ctrl.fullName(item)"
+						md-min-length="0"
+						placeholder="Employee Name">
+					<md-item-template>
+						<span md-highlight-text="searchText" md-highlight-flags="^i">{{ctrl.fullName(item)}}</span>
+					</md-item-template>
+			</div>
+		</div>
+
+		<div layout="row" class="demo-dialog-button">
+			<md-button flex class="md-primary"  ng-click="ctrl.assign()" type="submit">
+				Assign
+			</md-button>
+			<md-button flex ng-click="ctrl.closeDialog()">
+				Close
+			</md-button>
+		</div>
+</div>
+</form>

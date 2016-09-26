@@ -1,0 +1,62 @@
+<div  style="max-width: 80%; padding-left: 10%;">
+<md-content>
+	<div layout="row" class="demo-dialog-button" style="padding-left: 30%">
+		<md-span flex="60"></md-span>
+		<md-button ng-show="user.admin" md-autofocus flex="30" class="md-primary"  ng-click="addNewEmployee()" type="submit">
+			Add new Employee
+		</md-button>
+		<md-span flex="10"></md-span>
+	</div>
+<md-list>
+	<md-list-item ng-repeat="item in employees">
+		<div class="md-button md-no-style">
+		<div class="md-list-item-text">
+			<h3>{{item.firstName}} {{item.lastName}}</h3>
+		</div>
+		</div>
+		<md-menu class="md-secondary">
+			<md-button class="md-icon-button">
+				<md-icon md-svg-icon="communication:message"></md-icon>
+			</md-button>
+			<md-menu-content width="4">
+				<md-menu-item>
+					<md-button ng-click="newReview(item)">
+						Submit Review
+					</md-button>
+				</md-menu-item>
+				<md-menu-item>
+					<md-button ng-click="viewEmployee(item)">
+						View
+					</md-button>
+				</md-menu-item>
+				<md-menu-item ng-show="user.admin" >
+					<md-button ng-click="editEmployee(item)">
+						Update
+					</md-button>
+				</md-menu-item>
+				<md-menu-item ng-show="user.admin" >
+					<md-button ng-click="showDialog(item)">
+						Assign participation
+					</md-button>
+				</md-menu-item>
+				<md-menu-divider ng-show="user.admin" ></md-menu-divider>
+				<md-menu-item ng-show="user.admin" >
+					<md-button ng-click="deleteEmployee(item)">
+						Remove
+					</md-button>
+				</md-menu-item>
+			</md-menu-content>
+		</md-menu>
+	</md-list-item>
+<!--
+	<md-list-item class="md-2-line" ng-repeat="item in todos">
+		<md-checkbox ng-model="item.done"></md-checkbox>
+		<div class="md-list-item-text">
+			<h3>{{item.title}}</h3>
+			<p>{{item.description}}</p>
+		</div>
+	</md-list-item>
+-->
+</md-list>
+</md-content>
+</div>

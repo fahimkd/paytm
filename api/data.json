@@ -1,0 +1,18 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Admin",
+      "lastName": "User",
+      "description": "",
+      "username": "admin",
+      "password": "123456",
+      "admin": true,
+      "reviews": [],
+      "address": "30 Tuxedo Court",
+      "address2": "Apt 701",
+      "city": "SCARBOROUGH",
+      "postalCode": "M1G 3S6"
+    }
+  ]
+}

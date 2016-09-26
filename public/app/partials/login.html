@@ -1,0 +1,45 @@
+<form name="loginForm">
+<div  style="max-width: 80%; padding-left: 25%; padding-top: 100px;">
+<md-content>
+	<div flex="50">
+	<md-input-container class="md-icon-float md-block">
+		<!-- Use floating label instead of placeholder -->
+		<label>Username</label>
+		<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+		<input required name="username" ng-model="username" type="text">
+	</md-input-container>
+	</div>
+	<div flex="50">
+	<md-input-container class="md-icon-float md-block">
+		<!-- Use floating label instead of placeholder -->
+		<label>Password</label>
+		<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+		<input required name="password" ng-model="password" type="password">
+	</md-input-container>
+	</div>
+	<div style="margin-left: 20%;">
+		<md-button md-autofocus class="md-primary" ng-click="login()" type="submit">Login</md-button>
+	</div>
+
+	<div ng-show="loginError" role="alert" style="margin-left: 13%;">
+		<br/><br/>
+		<div ng-message="required" class="my-message">You have entered invalid login information.</div>
+	</div>
+
+	<br/><br/><br/>
+	<div style="margin-left: 15%;margin-bottom: 15%;">
+	<md-whiteframe class="md-whiteframe-6dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+		<span>
+			<br/>
+			Admin Account<br/>
+			Admin Username: <b>admin</b><br/>
+			Admin Password: <b>123456</b>
+			<br/>
+			<br/>
+		</span>
+	</md-whiteframe>
+	</div>
+
+</md-content>
+</div>
+</form>

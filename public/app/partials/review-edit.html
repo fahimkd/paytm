@@ -1,0 +1,28 @@
+<form ng-submit="submitReview(review)">
+<div  style="max-width: 80%; padding-left: 10%;">
+<md-content>
+<md-list>
+	<md-list-item ng-repeat="item in review.questions">
+		<div class="md-button md-no-style">
+		<div class="md-list-item-text">
+			<h3>{{item.question}}</h3>
+			<md-input-container class="md-block" flex-gt-sm>
+				<label>Answer</label>
+				<input required ng-model="item.answer">
+			</md-input-container>
+		</div>
+		</div>
+	</md-list-item>
+	<div flex><br/><br/></div>
+	<div layout="row" class="demo-dialog-button" style="padding-left: 30%">
+		<md-button md-autofocus flex="15" class="md-primary" type="submit">
+			Submit
+		</md-button>
+		<md-button flex="15" ng-click="cancelSubmit()">
+			Close
+		</md-button>
+	</div>
+</md-list>
+</md-content>
+</div>
+</form>

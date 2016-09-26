@@ -1,0 +1,16 @@
+	<md-toolbar>
+
+		<div class="md-toolbar-tools" style="padding-left: 5%; padding-right: 5%;">
+			<span>
+				{{ title() }}
+			</span>
+
+			<!-- fill up the space between left and right area -->
+			<span flex></span>
+
+			<md-button ng-click="logout()" ng-show="showLogout()">
+				Log out
+			</md-button>
+		</div>
+
+	</md-toolbar>

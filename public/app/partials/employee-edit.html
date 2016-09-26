@@ -1,0 +1,88 @@
+<div  style="max-width: 80%; padding-left: 10%;">
+	<div layout="column" ng-cloak class="md-inline-form">
+
+	<md-content layout-padding>
+		<div>
+			<form name="userForm" ng-submit="saveEmployee(employee)">
+
+
+				<div layout-gt-sm="row">
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>First name</label>
+						<input required ng-model="employee.firstName">
+					</md-input-container>
+
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Last Name</label>
+						<input required ng-model="employee.lastName">
+					</md-input-container>
+				</div>
+
+				<md-input-container class="md-block">
+					<label>Address</label>
+					<input ng-model="employee.address">
+				</md-input-container>
+
+				<md-input-container md-no-float class="md-block">
+					<input ng-model="employee.address2" placeholder="Address 2">
+				</md-input-container>
+
+				<div layout-gt-sm="row">
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>City</label>
+						<input ng-model="employee.city">
+					</md-input-container>
+
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Province</label>
+						<md-select ng-model="employee.state">
+							<md-option ng-repeat="state in [{abbrev: 'Ontario'}, {abbrev: 'Quebec'}, {abbrev: 'British Columbia'}]" value="{{state.abbrev}}">
+								{{state.abbrev}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Postal Code</label>
+						<input name="postalCode" ng-model="employee.postalCode" placeholder="12345"
+							   required ng-pattern="/^[A-Z][0-9][A-Z](?:\s)?[0-9][A-Z][0-9]$/" md-maxlength="7">
+
+						<div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+							<div ng-message="required" class="my-message">You must supply a postal code.</div>
+							<div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+								code.
+							</div>
+						</div>
+					</md-input-container>
+				</div>
+				<div layout-gt-sm="row">
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Username</label>
+						<input required ng-model="employee.username">
+					</md-input-container>
+
+					<md-input-container class="md-block" flex-gt-sm>
+						<label>Password</label>
+						<input required type="password" ng-model="employee.password">
+					</md-input-container>
+				</div>
+
+
+				<div flex><br/><br/></div>
+				<div layout="row" class="demo-dialog-button" style="padding-left: 30%">
+					<md-button md-autofocus flex="15" class="md-primary" type="submit">
+						Save
+					</md-button>
+					<md-button flex="15" ng-click="cancelEdit()">
+						Close
+					</md-button>
+				</div>
+
+
+
+			</form>
+		</div>
+	</md-content>
+
+	</div>
+</div>
